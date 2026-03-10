@@ -1,0 +1,31 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: deep-fryer
+  description: Async job processor for order fulfillment — dropping tasks into hot oil and pulling them out golden
+  annotations:
+    github.com/project-slug: portal-interview/deep-fryer
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://github.com/portal-interview/deep-fryer
+      title: GitHub
+spec:
+  type: service
+  lifecycle: production
+  owner: group:portal-interview/team-grill
+  system: kitchen-display-system
+  providesApis:
+    - deep-fryer-api
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: deep-fryer-api
+  description: Async job processing API
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:portal-interview/team-grill
+  system: kitchen-display-system
+  definition:
+    $text: ./openapi.yaml

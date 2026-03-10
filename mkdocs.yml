@@ -1,0 +1,5 @@
+site_name: Deep Fryer
+nav:
+  - Home: index.md
+plugins:
+  - techdocs-core
